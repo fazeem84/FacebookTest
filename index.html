@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>FaceBook Marketing Tool</title>
+	
+	<script src="jquery-1.11.3.min.js" ></script>
+	<script src="faceBook.js" ></script>
+	<link rel="stylesheet" href="css/styles.css" />
+	<script>  
+		
+		
+	</script>
+  </head>
+  <body>
+  
+	<script>
+      window.fbAsyncInit = function() {
+    FB.init({
+			  appId      : '1652211535043659',
+			  xfbml      : true,
+			  version    : 'v2.5'
+			});
+		  };
+
+	  (function(d, s, id){
+		 var js, fjs = d.getElementsByTagName(s)[0];
+		 if (d.getElementById(id)) {return;}
+		 js = d.createElement(s); js.id = id;
+		 js.src = "//connect.facebook.net/en_US/sdk.js";
+		 fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <div id="sourceText">FaceBook Test</div>
+	<div style="padding-top:10px">
+		<input id='msgTxt' class="input_txt" text="Post Message" type='text' placeholder='Type Message'/>
+		<button  class='btn' onclick='feedToMyFaceBook())'>Post Message</button>
+	</div>
+	<div style="padding-top:10px">
+		<input id='groupTxt' class="input_txt" type='text' placeholder='Group Name'  />
+		<button class='btn' onclick='searchFacebookGroups()'>GetGroupInfo</button>
+		<div id="checkDiv"></div>
+	</div>
+	<div id="uploadResults"></div>
+	<div style="padding-top:10px">
+		<div>
+			
+			<input class="input_txt" id="file" type="file" />
+			<input type="button" class='btn' value="Upload document" class="" onclick='postPhotosToFacebookGroups();'/>
+		</div>
+		<div style="padding-top:10px;">
+			<canvas width="400" height="500" id="canvas" style="border:solid"/>
+		</div>
+		
+	</div>
+	
+    
+  </body>
+</html>
